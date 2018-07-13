@@ -6,19 +6,20 @@
 
 这是一个基于 [shadowsocks-manager webui 插件](https://github.com/shadowsocks/shadowsocks-manager) 开发的shadowsocks账号售卖网站的Docker镜像
 
-此镜像发布在 [DockerHub](https://hub.docker.com/r/chxj1992/shadowsocks-manager-docker/) 上，国内访问 `DockerHub` 速度缓慢，建议使用 `DaoCloud` 或 `阿里云` 提供的加速器来下载镜像
+此镜像发布在 [DockerHub](https://hub.docker.com/r/johnstevin/shadowsocks-manager-docker/) 上，国内访问 `DockerHub` 速度缓慢，建议使用 `DaoCloud` 或 `阿里云` 提供的加速器来下载镜像
 
 
 ### 版本
 
-* 1.0
+* 1.0-alpha
+* latest (最新)
 
 
 ### 快速开始
 
 启动Docker镜像
 
-`docker run --rm -it --name shadowsocks-manager -p 4002:4002 johnstevin/shadowsocks-manager-docker:1.0`
+`docker run --rm -it --name shadowsocks-manager -p 4002:4002 johnstevin/shadowsocks-manager-docker`
 
 在浏览器中访问 `http://localhost:4002` 
 
