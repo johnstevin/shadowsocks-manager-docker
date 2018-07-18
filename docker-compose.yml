@@ -2,7 +2,7 @@ version: '2'
 
 services:
   shadowsocks-manager:
-    images: johnstevin/shadowsocks-manager-docker
+    image: johnstevin/shadowsocks-manager-docker
     container_name: shadowsocks-manager
     ports:
       - "8388:8388"
