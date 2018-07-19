@@ -26,6 +26,9 @@ services:
     ports:
       - "3306:3306"
     hostname: docker-mysql
+    networks:
+      - default
+      - domainA_default
     volumes:
       - "./mysql/data:/var/lib/mysql:rw"  #todo权限的问题无法解决
     env_file: .env
@@ -33,3 +36,6 @@ services:
       TZ: Asia/Chongqing
       restart: always
 
+networks:
+  domainA_default:
+    external: true
