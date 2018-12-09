@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get install -y shadowsocks-libev && \
     curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     apt-get install -y nodejs && \
-    npm i -g shadowsocks-manager && \
+    #npm i -g shadowsocks-manager && \
     echo "Asia/Shanghai" > /etc/timezone && \
     rm /etc/localtime
 #RUN dpkg-reconfigure -f noninteractive tzdata
@@ -18,7 +18,7 @@ RUN apt-get update && \
 
 #RUN npm i -g shadowsocks-manager --unsafe-perm
 
-#ADD ./code /var/www/shadowsocks-manager
+ADD ./code /var/www/shadowsocks-manager
 ADD ./config /etc/shadowsocks
 ADD ./supervisor /etc/supervisor
 ADD ./entry.sh .

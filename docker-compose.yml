@@ -11,14 +11,15 @@ services:
       - "9001:9001"
       - "6001:6001"
       - "50000-50100:50000-50100"
-    #volumes: 
-      #- ./supervisor:/etc/supervisor
-      #- ./config:/etc/shadowsocks
-      #- ./data:/root/.ssmgr:rw 这里权限有问题，无法启动ssmgr
-      #- ./code:/var/www/shadowsocks-manager
+    volumes: 
+      - $PWD/supervisor:/etc/supervisor
+      - $PWD/config:/etc/shadowsocks
+      - $PWD/data:/root/.ssmgr
+      - $PWD/code:/var/www/shadowsocks-manager
     links:
       - mysql
     restart: always
+    privileged: true
 
   mysql:
     build: ./mysql
@@ -26,16 +27,17 @@ services:
     ports:
       - "3306:3306"
     hostname: docker-mysql
-    networks:
-      - default
-      - domainA_default
+#    networks:
+#      - default
+#      - domainA_default
     volumes:
-      - "./mysql/data:/var/lib/mysql:rw"  #todo权限的问题无法解决
+      - $PWD/mysql/data:/var/lib/mysql
     env_file: .env
     environment:
       TZ: Asia/Chongqing
-      restart: always
+    restart: always
+    privileged: true
 
-networks:
-  domainA_default:
-    external: true
+#networks:
+#  domainA_default:
+#    external: true
