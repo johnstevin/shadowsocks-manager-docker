@@ -12,10 +12,10 @@ services:
       - "6001:6001"
       - "50000-50100:50000-50100"
     volumes: 
-      - $PWD/supervisor:/etc/supervisor
-      - $PWD/config:/etc/shadowsocks
-      - $PWD/data:/root/.ssmgr
-      - $PWD/code:/var/www/shadowsocks-manager
+      - ./supervisor:/etc/supervisor
+      - ./config:/etc/shadowsocks
+      - ./data:/root/.ssmgr
+      - ./code:/var/www/shadowsocks-manager
     links:
       - mysql
     restart: always
@@ -31,7 +31,7 @@ services:
 #      - default
 #      - domainA_default
     volumes:
-      - $PWD/mysql/data:/var/lib/mysql
+      - ./mysql/data:/var/lib/mysql
     env_file: .env
     environment:
       TZ: Asia/Chongqing
