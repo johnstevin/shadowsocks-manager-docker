@@ -11,7 +11,7 @@ RUN apt-get update && \
     npm i -g shadowsocks-manager && \
     echo "Asia/Shanghai" > /etc/timezone && \
     rm /etc/localtime
-RUN dpkg-reconfigure -f noninteractive tzdata
+#RUN dpkg-reconfigure -f noninteractive tzdata
 #EXPOSE 50000-60000
 
 #ENTRYPOINT ["/usr/bin/ssmgr"]
