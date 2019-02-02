@@ -16,7 +16,7 @@ RUN apt-get update && \
 
 #ENTRYPOINT ["/usr/bin/ssmgr"]
 
-#RUN npm i -g shadowsocks-manager --unsafe-perm
+RUN npm i -g shadowsocks-manager --unsafe-perm
 
 #ADD ./code /var/www/shadowsocks-manager
 ADD ./config /etc/shadowsocks
