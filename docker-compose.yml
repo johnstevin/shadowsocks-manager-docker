@@ -2,7 +2,7 @@ version: '2'
 
 services:
   shadowsocks-manager:
-    image: johnstevin/shadowsocks-manager-docker
+    image: johnstevin/shadowsocks-manager-docker:1.0-alpha
     container_name: shadowsocks-manager
     ports:
       - "8388:8388"
@@ -12,10 +12,10 @@ services:
       - "6001:6001"
       - "50000-50100:50000-50100"
     volumes: 
-      - ./supervisor:/etc/supervisor
-      - ./config:/etc/shadowsocks
+      # - ./supervisor:/etc/supervisor
+      #- ./config:/etc/shadowsocks
       - ./data:/root/.ssmgr
-      - ./code:/var/www/shadowsocks-manager
+        # - ./code:/var/www/shadowsocks-manager
     links:
       - mysql
     restart: always
